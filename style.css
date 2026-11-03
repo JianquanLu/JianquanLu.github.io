@@ -1,0 +1,148 @@
+/* 颜色取自那张天空：左下角的浅蓝到右上角的深蓝 */
+:root {
+  --bg-top: #e7eff8;
+  --bg-bottom: #f6f8fb;
+  --card: rgba(255, 255, 255, 0.72);
+  --card-border: rgba(41, 72, 122, 0.10);
+  --text: #1f2d44;
+  --muted: #6b7a92;
+  --accent: #2b4b7e;
+  --chip: rgba(43, 75, 126, 0.08);
+  --serif: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", serif;
+  --sans: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-top: #22385c;
+    --bg-bottom: #121a28;
+    --card: rgba(255, 255, 255, 0.06);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text: #e6ecf5;
+    --muted: #93a3bd;
+    --accent: #a9c4ea;
+    --chip: rgba(255, 255, 255, 0.08);
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-bottom);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sky {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 60vh;
+  background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  z-index: -1;
+}
+
+.site-header,
+.filters,
+.feed,
+.site-footer {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-header { padding-top: 88px; padding-bottom: 28px; }
+
+.site-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 2.2rem;
+  letter-spacing: 0.01em;
+  margin: 0;
+  color: var(--accent);
+}
+
+.site-tagline {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.chip {
+  border: none;
+  background: var(--chip);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 4px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.chip:hover { color: var(--text); }
+.chip.active { background: var(--accent); color: var(--bg-bottom); }
+
+.post {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 20px 22px 8px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.post-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.post-meta time { font-variant-numeric: tabular-nums; letter-spacing: 0.04em; }
+.post-meta .tag {
+  margin-left: auto;
+  color: var(--accent);
+  background: var(--chip);
+  padding: 0 10px;
+  border-radius: 999px;
+}
+
+.post-image {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.post-title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+}
+
+.post-text {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+}
+.post-text p { margin: 0 0 12px; }
+
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding-top: 24px;
+  padding-bottom: 64px;
+}
