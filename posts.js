@@ -11,7 +11,7 @@ const POSTS = [
     date: "2026-11-07",
     tag: "日记",
     title: "到底什么是ai味",
-    image: "mages/2026-11-07-rain.webp",
+    image: "images/2026-11-07-rain.webp",
     text: "为什么我看不出来ai味\n下雨了\n爽",
   },
   {
